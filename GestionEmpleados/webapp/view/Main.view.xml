@@ -1,0 +1,7 @@
+<mvc:View controllerName="MasterLogali.GestionEmpleados.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Text text="Prueba"/>
+                    </content>
+				</Page>
+</mvc:View>
