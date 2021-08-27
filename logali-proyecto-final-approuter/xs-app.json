@@ -1,4 +1,5 @@
 {
+  "welcomeFile": "MasterLogaliGestionEmpleados",
   "authenticationMethod": "none",
   "routes": []
 }

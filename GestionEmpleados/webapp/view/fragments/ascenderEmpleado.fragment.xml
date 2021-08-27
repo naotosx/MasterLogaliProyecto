@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+
+    <Dialog title="{i18n>nuevoAscenso}" class="sapUiResponsiveContentPadding">
+        <content>
+            <VBox>
+                <Label text="{i18n>salario}"/>
+                <Input value="{modelData>/salario}" valueState="{modelData>/valueStatus}" type="Number"/>
+            </VBox>
+            <VBox>
+                <Label text="{i18n>fecha}"/>
+                <DatePicker dateValue="{modelData>/fecha}" valueState="{modelData>/valueStatusDate}"/>
+            </VBox>
+            <VBox width="100%">
+                <Label text="{i18n>comentario}"/>
+                <TextArea value="{modelData>/Comments}" width="100%" rows="2"></TextArea>
+                <Image src="./img/check.png" class="myPosition"/>
+            </VBox>
+        </content>
+        <buttons>
+			<Button text="{i18n>aceptar}" press=".onAumentarSalario"></Button>
+			<Button text="{i18n>btnCancel}" press="onCloseAscender"></Button>
+		</buttons>
+    </Dialog>
+
+</core:FragmentDefinition>

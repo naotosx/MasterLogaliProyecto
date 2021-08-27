@@ -1,7 +1,37 @@
 <mvc:View controllerName="MasterLogali.GestionEmpleados.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-				<Page id="page" title="{i18n>title}">
-					<content>
-                        <Text text="Prueba"/>
-                    </content>
-				</Page>
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Panel expanded="true" expandable="true">
+                <headerToolbar>
+                    <Toolbar >
+                        <Title text="{i18n>panelTitle1}"/>
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        press="onCrearEmpleadoTile" headerImage="sap-icon://add-employee">
+                        <TileContent footer="{i18n>creaEmpleado}"/>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        press="onVerEmpleadoTile" headerImage="sap-icon://employee-lookup">
+                        <TileContent footer="{i18n>verEmpleado}"/>
+                    </GenericTile> 
+                </content>
+            </Panel>
+            <Panel expanded="true" expandable="true">
+                <headerToolbar>
+                    <Toolbar >
+                        <Title text="{i18n>panelTitle2}"/>
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" url="http://84f44aa3trial-dev-logali-approuter.cfapps.us10.hana.ondemand.com/"
+                        press="onFirmarPedidoTile" headerImage="sap-icon://signature">
+                        <TileContent footer="{i18n>firmaPedido}"/>
+                    </GenericTile>
+                </content>
+            </Panel>
+        </content>
+    </Page>
 </mvc:View>

@@ -1,1 +1,7 @@
 /* Enter your custom styles here */
+.myPosition {
+    width: 20px;
+    position: absolute;
+    right: 3px;
+    top: -1.5rem;
+}

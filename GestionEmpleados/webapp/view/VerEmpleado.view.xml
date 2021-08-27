@@ -1,0 +1,51 @@
+<mvc:View controllerName="MasterLogali.GestionEmpleados.controller.VerEmpleado" 
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <SplitContainer
+		id="SplitContDemo"
+		initialDetail="detail"
+		initialMaster="master">
+		<detailPages>
+            <Page id="seleccionEmpleado" showHeader="false">
+                <FlexBox alignItems="Center" justifyContent="Center" height="100%">
+					<Text text="{i18n>seleccioneEmpleado}"></Text>
+				</FlexBox>
+            </Page>
+			<Page   id="detail"
+				    title="{i18n>detailEmployeeTitle}"
+				    backgroundDesign= "Solid">
+                <core:Fragment fragmentName="MasterLogali.GestionEmpleados.view.fragments.detailEmployee" type="XML"/>
+            <footer>
+                <Toolbar>
+                    <ToolbarSpacer/>
+                    <Button press=".onDarBaja" text="{i18n>des}" />
+                    <Button press=".onAscender" text="{i18n>asc}" />
+                </Toolbar>
+            </footer>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page
+                id="master"
+                showHeader="false"
+                showFooter="false">
+                    <OverflowToolbar class="sapUiTinyMargin">
+                        <Button icon="sap-icon://nav-back" press="onGoHome"/>
+                        <SearchField liveChange=".onSearch" width="80%" />
+                    </OverflowToolbar>
+                <List   id="listMaster"
+                        items="{ path: 'odataModel>/Users', 
+                               filters :   [{
+                                    path: 'SapId',
+                                    operator: 'EQ',
+                                    value1: 'naotoamari@gmail.com' 
+                                }] }">
+					<StandardListItem title="{odataModel>FirstName} {odataModel>LastName}" type="Active" press=".onShowItemDetail" description="{odataModel>Dni}"/>
+				</List>
+			</Page>
+		</masterPages>
+	</SplitContainer>
+</mvc:View>

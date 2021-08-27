@@ -1,6 +1,5 @@
 <mvc:View controllerName="MasterLogali.GestionEmpleados.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
 	<Shell id="shell">
-		<App id="app">
-		</App>
+		<App id="app"/>
 	</Shell>
 </mvc:View>
